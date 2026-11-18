@@ -8,7 +8,7 @@ minikube addons enable metrics-server -p scaletest
 minikube stop -p scaletest
 ```
 
-Все ресурсы в namespace `scaletest`. Образ `scaletestapp:local` собрал из исходников scaletestapp, поэтому `imagePullPolicy: Never`.
+Все ресурсы в namespace `scaletest`. Образ `scaletestapp:local` собирал из исходников
 
 ## Часть 1. Масштабирование по памяти
 ### Приложение и сервис
@@ -16,7 +16,7 @@ minikube stop -p scaletest
 ![Ответ приложения: идентификатор пода](artifacts/browser_localhost.png)
 ![Метрики приложения, есть http_requests_total](artifacts/browser_localhost_metrics.png)
 
-Под без нагрузки занимает 11Mi:
+Под без нагрузки занимает ~11Mi:
 ![kubectl top pod без нагрузки](artifacts/top_pod_1.png)
 ![Применил service.yaml, запустил minikube tunnel](artifacts/apply_service.png)
 ![Сервис получил EXTERNAL-IP 127.0.0.1](artifacts/get_svc.png)
@@ -24,7 +24,7 @@ minikube stop -p scaletest
 
 ### Нагрузка
 
-1. Сначала запускал Locust локально через туннель (`http://127.0.0.1:8080`), 100 -> 1500 пользователей. Память выросла с 31% до 91%, HPA добавил второй под. Через туннель 26% ошибок, поэтому решил попробовать запустить Locust в кластере.
+1. Сначала запускал Locust локально через туннель (`http://127.0.0.1:8080`), 100 -> 1500 пользователей. Память выросла с 31% до 91%, HPA добавил второй под. Через туннель 26% ошибок, поэтому решил попробовать запустить Locust в кластере, дальше если еще увеличивать то еще рост только в ошибках пропорционально запросам.
 
 ![Locust локально, до 1500 пользователей](artifacts/locus_dashboard.png)
 ![kubectl get hpa -w: 1 -> 2 пода](artifacts/watch_hpa_locus_600_user.png)
@@ -68,7 +68,7 @@ API custom metrics доступен, в нем есть `pods/http_requests_per_
 
 ### Проверка HPA по RPS
 
-До 20:13 работал HPA по памяти и держал 10 подов. После замены на hpa-rps число подов меняется вслед за нагрузкой, а после выключения нагрузки падает до 1:
+До ~20:18 работал HPA по памяти и держал 10 подов. После замены на hpa-rps число подов меняется вслед за нагрузкой, а после выключения нагрузки падает до 1:
 ![Grafana: RPS по подам и количество подов](artifacts/auto_kill_pods.png)
 
 `10146m/10` в TARGETS - это 10.1 запроса в секунду на под при цели 10 (`m` - тысячные доли). Когда RPS падает до 0, HPA примерно за 2 минуты сокращает поды 10 -> 5 -> 4 -> 2 -> 1:
