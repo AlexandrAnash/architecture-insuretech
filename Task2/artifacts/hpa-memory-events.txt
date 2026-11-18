@@ -1,0 +1,83 @@
+LAST SEEN   TYPE      REASON                         OBJECT                                 MESSAGE
+56m         Normal    SuccessfulCreate               replicaset/scaletestapp-dfc58f97c      Created pod: scaletestapp-dfc58f97c-l9gc7
+56m         Normal    ScalingReplicaSet              deployment/scaletestapp                Scaled up replica set scaletestapp-dfc58f97c from 0 to 1
+56m         Normal    Scheduled                      pod/scaletestapp-dfc58f97c-l9gc7       Successfully assigned scaletest/scaletestapp-dfc58f97c-l9gc7 to scaletest
+56m         Normal    Killing                        pod/scaletestapp-784bcb484-n82wq       Stopping container scaletestapp
+56m         Normal    SuccessfulDelete               replicaset/scaletestapp-784bcb484      Deleted pod: scaletestapp-784bcb484-n82wq
+56m         Normal    ScalingReplicaSet              deployment/scaletestapp                Scaled down replica set scaletestapp-784bcb484 from 1 to 0
+56m         Warning   FailedGetResourceMetric        horizontalpodautoscaler/scaletestapp   failed to get memory utilization: unable to get metrics for resource memory: no metrics returned from resource metrics API
+56m         Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/scaletestapp   invalid metrics (1 invalid out of 1), first error is: failed to get memory resource metric value: failed to get memory utilization: unable to get metrics for resource memory: no metrics returned from resource metrics API
+53m         Normal    SuccessfulCreate               replicaset/scaletestapp-dfc58f97c      Created pod: scaletestapp-dfc58f97c-kd8v2
+53m         Normal    SuccessfulRescale              horizontalpodautoscaler/scaletestapp   New size: 2; reason: memory resource utilization (percentage of request) above target
+53m         Normal    ScalingReplicaSet              deployment/scaletestapp                Scaled up replica set scaletestapp-dfc58f97c from 1 to 2
+53m         Normal    Scheduled                      pod/scaletestapp-dfc58f97c-kd8v2       Successfully assigned scaletest/scaletestapp-dfc58f97c-kd8v2 to scaletest
+44m         Normal    ScalingReplicaSet              deployment/locust                      Scaled up replica set locust-6bd9bb56d7 from 0 to 1
+44m         Normal    Scheduled                      pod/locust-6bd9bb56d7-qb9dv            Successfully assigned scaletest/locust-6bd9bb56d7-qb9dv to scaletest
+44m         Normal    SuccessfulCreate               replicaset/locust-6bd9bb56d7           Created pod: locust-6bd9bb56d7-qb9dv
+44m         Normal    Pulling                        pod/locust-6bd9bb56d7-qb9dv            Pulling image "locustio/locust:latest"
+44m         Normal    Pulled                         pod/locust-6bd9bb56d7-qb9dv            Successfully pulled image "locustio/locust:latest" in 28.822s (28.822s including waiting). Image size: 288954278 bytes.
+44m         Normal    Started                        pod/locust-6bd9bb56d7-qb9dv            Container started
+44m         Normal    Created                        pod/locust-6bd9bb56d7-qb9dv            Container created
+29m         Normal    ScalingReplicaSet              deployment/scaletestapp                Scaled up replica set scaletestapp-dfc58f97c from 2 to 3
+29m         Normal    SuccessfulRescale              horizontalpodautoscaler/scaletestapp   New size: 3; reason: memory resource utilization (percentage of request) above target
+29m         Normal    Scheduled                      pod/scaletestapp-dfc58f97c-m78sg       Successfully assigned scaletest/scaletestapp-dfc58f97c-m78sg to scaletest
+29m         Normal    SuccessfulCreate               replicaset/scaletestapp-dfc58f97c      Created pod: scaletestapp-dfc58f97c-m78sg
+28m         Normal    ScalingReplicaSet              deployment/scaletestapp                Scaled up replica set scaletestapp-dfc58f97c from 3 to 4
+28m         Normal    SuccessfulRescale              horizontalpodautoscaler/scaletestapp   New size: 4; reason: memory resource utilization (percentage of request) above target
+28m         Normal    Scheduled                      pod/scaletestapp-dfc58f97c-g4sxl       Successfully assigned scaletest/scaletestapp-dfc58f97c-g4sxl to scaletest
+28m         Normal    SuccessfulCreate               replicaset/scaletestapp-dfc58f97c      Created pod: scaletestapp-dfc58f97c-g4sxl
+28m         Normal    Created                        pod/scaletestapp-dfc58f97c-g4sxl       Container created
+28m         Normal    Started                        pod/scaletestapp-dfc58f97c-g4sxl       Container started
+28m         Normal    Pulled                         pod/scaletestapp-dfc58f97c-g4sxl       Container image "scaletestapp:local" already present on machine and can be accessed by the pod
+25m         Normal    Scheduled                      pod/scaletestapp-dfc58f97c-5frxt       Successfully assigned scaletest/scaletestapp-dfc58f97c-5frxt to scaletest
+25m         Normal    SuccessfulCreate               replicaset/scaletestapp-dfc58f97c      Created pod: scaletestapp-dfc58f97c-5frxt
+25m         Normal    SuccessfulRescale              horizontalpodautoscaler/scaletestapp   New size: 5; reason: memory resource utilization (percentage of request) above target
+25m         Normal    ScalingReplicaSet              deployment/scaletestapp                Scaled up replica set scaletestapp-dfc58f97c from 4 to 5
+25m         Normal    Created                        pod/scaletestapp-dfc58f97c-5frxt       Container created
+25m         Normal    Pulled                         pod/scaletestapp-dfc58f97c-5frxt       Container image "scaletestapp:local" already present on machine and can be accessed by the pod
+25m         Normal    Started                        pod/scaletestapp-dfc58f97c-5frxt       Container started
+24m         Normal    SuccessfulRescale              horizontalpodautoscaler/scaletestapp   New size: 7; reason: memory resource utilization (percentage of request) above target
+24m         Normal    SuccessfulCreate               replicaset/scaletestapp-dfc58f97c      Created pod: scaletestapp-dfc58f97c-c7cvq
+24m         Normal    SuccessfulCreate               replicaset/scaletestapp-dfc58f97c      Created pod: scaletestapp-dfc58f97c-r6nnv
+24m         Normal    ScalingReplicaSet              deployment/scaletestapp                Scaled up replica set scaletestapp-dfc58f97c from 5 to 7
+24m         Normal    Scheduled                      pod/scaletestapp-dfc58f97c-r6nnv       Successfully assigned scaletest/scaletestapp-dfc58f97c-r6nnv to scaletest
+24m         Normal    Scheduled                      pod/scaletestapp-dfc58f97c-c7cvq       Successfully assigned scaletest/scaletestapp-dfc58f97c-c7cvq to scaletest
+24m         Normal    Created                        pod/scaletestapp-dfc58f97c-c7cvq       Container created
+24m         Normal    Pulled                         pod/scaletestapp-dfc58f97c-r6nnv       Container image "scaletestapp:local" already present on machine and can be accessed by the pod
+24m         Normal    Pulled                         pod/scaletestapp-dfc58f97c-c7cvq       Container image "scaletestapp:local" already present on machine and can be accessed by the pod
+24m         Normal    Started                        pod/scaletestapp-dfc58f97c-r6nnv       Container started
+24m         Normal    Created                        pod/scaletestapp-dfc58f97c-r6nnv       Container created
+24m         Normal    Started                        pod/scaletestapp-dfc58f97c-c7cvq       Container started
+23m         Normal    SuccessfulCreate               replicaset/scaletestapp-dfc58f97c      Created pod: scaletestapp-dfc58f97c-q698x
+23m         Normal    Scheduled                      pod/scaletestapp-dfc58f97c-qrqsn       Successfully assigned scaletest/scaletestapp-dfc58f97c-qrqsn to scaletest
+23m         Normal    SuccessfulCreate               replicaset/scaletestapp-dfc58f97c      Created pod: scaletestapp-dfc58f97c-bs4pc
+23m         Normal    Scheduled                      pod/scaletestapp-dfc58f97c-q698x       Successfully assigned scaletest/scaletestapp-dfc58f97c-q698x to scaletest
+23m         Normal    Scheduled                      pod/scaletestapp-dfc58f97c-bs4pc       Successfully assigned scaletest/scaletestapp-dfc58f97c-bs4pc to scaletest
+23m         Normal    ScalingReplicaSet              deployment/scaletestapp                Scaled up replica set scaletestapp-dfc58f97c from 7 to 10
+23m         Normal    SuccessfulCreate               replicaset/scaletestapp-dfc58f97c      Created pod: scaletestapp-dfc58f97c-qrqsn
+23m         Normal    SuccessfulRescale              horizontalpodautoscaler/scaletestapp   New size: 10; reason: memory resource utilization (percentage of request) above target
+23m         Normal    Created                        pod/scaletestapp-dfc58f97c-qrqsn       Container created
+23m         Normal    Pulled                         pod/scaletestapp-dfc58f97c-bs4pc       Container image "scaletestapp:local" already present on machine and can be accessed by the pod
+23m         Normal    Created                        pod/scaletestapp-dfc58f97c-bs4pc       Container created
+23m         Normal    Pulled                         pod/scaletestapp-dfc58f97c-q698x       Container image "scaletestapp:local" already present on machine and can be accessed by the pod
+23m         Normal    Pulled                         pod/scaletestapp-dfc58f97c-qrqsn       Container image "scaletestapp:local" already present on machine and can be accessed by the pod
+23m         Normal    Created                        pod/scaletestapp-dfc58f97c-q698x       Container created
+23m         Normal    Started                        pod/scaletestapp-dfc58f97c-qrqsn       Container started
+23m         Normal    Started                        pod/scaletestapp-dfc58f97c-q698x       Container started
+23m         Normal    Started                        pod/scaletestapp-dfc58f97c-bs4pc       Container started
+22m         Warning   Unhealthy                      pod/scaletestapp-dfc58f97c-l9gc7       Liveness probe failed: dial tcp 10.244.0.8:8080: connect: connection refused
+22m         Warning   Unhealthy                      pod/scaletestapp-dfc58f97c-l9gc7       Readiness probe failed: dial tcp 10.244.0.8:8080: connect: connection refused
+22m         Normal    Started                        pod/scaletestapp-dfc58f97c-l9gc7       Container started
+22m         Normal    Pulled                         pod/scaletestapp-dfc58f97c-l9gc7       Container image "scaletestapp:local" already present on machine and can be accessed by the pod
+22m         Normal    Created                        pod/scaletestapp-dfc58f97c-l9gc7       Container created
+21m         Normal    Started                        pod/scaletestapp-dfc58f97c-kd8v2       Container started
+21m         Normal    Created                        pod/scaletestapp-dfc58f97c-kd8v2       Container created
+21m         Normal    Pulled                         pod/scaletestapp-dfc58f97c-kd8v2       Container image "scaletestapp:local" already present on machine and can be accessed by the pod
+20m         Normal    Pulled                         pod/scaletestapp-dfc58f97c-m78sg       Container image "scaletestapp:local" already present on machine and can be accessed by the pod
+20m         Normal    Created                        pod/scaletestapp-dfc58f97c-m78sg       Container created
+20m         Normal    Started                        pod/scaletestapp-dfc58f97c-m78sg       Container started
+19m         Warning   Unhealthy                      pod/scaletestapp-dfc58f97c-l9gc7       Liveness probe failed: dial tcp 10.244.0.8:8080: i/o timeout
+19m         Warning   Unhealthy                      pod/scaletestapp-dfc58f97c-q698x       Readiness probe failed: dial tcp 10.244.0.17:8080: i/o timeout
+19m         Warning   Unhealthy                      pod/scaletestapp-dfc58f97c-kd8v2       Readiness probe failed: dial tcp 10.244.0.9:8080: i/o timeout
+19m         Warning   Unhealthy                      pod/scaletestapp-dfc58f97c-kd8v2       Liveness probe failed: dial tcp 10.244.0.9:8080: i/o timeout
+19m         Warning   Unhealthy                      pod/scaletestapp-dfc58f97c-bs4pc       Liveness probe failed: dial tcp 10.244.0.18:8080: i/o timeout

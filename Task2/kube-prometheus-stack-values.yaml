@@ -1,0 +1,32 @@
+fullnameOverride: kps
+
+# Отключаем то, что в minikube не нужно или будет "красным" в Targets
+alertmanager:
+  enabled: false
+nodeExporter:
+  enabled: false
+kubeStateMetrics:
+  enabled: false
+defaultRules:
+  create: false
+kubeEtcd:
+  enabled: false
+kubeScheduler:
+  enabled: false
+kubeControllerManager:
+  enabled: false
+kubeProxy:
+  enabled: false
+
+prometheus:
+  prometheusSpec:
+    scrapeInterval: 15s
+    evaluationInterval: 15s
+    serviceMonitorSelectorNilUsesHelmValues: false
+    resources:
+      requests:
+        memory: 400Mi
+
+grafana:
+  enabled: true
+  adminPassword: admin
